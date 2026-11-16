@@ -7,11 +7,10 @@ y el launcher oficial de Minecraft.
 
 1. Cierra Minecraft y el launcher.
 2. Abre **Windows PowerShell**: menú Inicio, escribe `PowerShell` y ábrelo.
-3. Pega estas dos líneas (juntas) y pulsa Enter:
+3. Pega esta línea y pulsa Enter:
 
    ```powershell
-   $u = 'https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1'
-   irm $u | iex
+   irm https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1 | iex
    ```
 
 4. Marca los mods que quieras y pulsa **Instalar**.
@@ -21,7 +20,7 @@ Para actualizar, repite los mismos pasos. Solo se descarga lo que haya cambiado.
 
 ### Si no te deja pegar, o PowerShell se queja
 
-Algunos antivirus o terminales bloquean pegar líneas con `irm ... | iex`. En ese caso, descarga el script a un archivo y ejecútalo desde ahí (pega las líneas de una en una):
+Algunos antivirus o terminales bloquean pegar varias líneas de golpe o líneas con `irm ... | iex`. En ese caso, descarga el script a un archivo y ejecútalo desde ahí (pega los comandos de uno en uno):
 
 ```powershell
 irm https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1 -OutFile "$env:TEMP\instalar.ps1"
