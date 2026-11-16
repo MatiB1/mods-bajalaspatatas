@@ -7,16 +7,31 @@ y el launcher oficial de Minecraft.
 
 1. Cierra Minecraft y el launcher.
 2. Abre **Windows PowerShell**: menú Inicio, escribe `PowerShell` y ábrelo.
-3. Pega esta línea y pulsa Enter:
+3. Pega estas dos líneas (juntas) y pulsa Enter:
 
    ```powershell
-   irm https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1 | iex
+   $u = 'https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1'
+   irm $u | iex
    ```
 
 4. Marca los mods que quieras y pulsa **Instalar**.
 5. Abre el launcher y elige el perfil de Fabric que te indica al terminar.
 
-Para actualizar, repite la misma línea. Solo se descarga lo que haya cambiado.
+Para actualizar, repite los mismos pasos. Solo se descarga lo que haya cambiado.
+
+### Si no te deja pegar, o PowerShell se queja
+
+Algunos antivirus o terminales bloquean pegar líneas con `irm ... | iex`. En ese caso, descarga el script a un archivo y ejecútalo desde ahí (pega las líneas de una en una):
+
+```powershell
+irm https://raw.githubusercontent.com/MatiB1/mods-bajalaspatatas/main/instalar.ps1 -OutFile "$env:TEMP\instalar.ps1"
+```
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:TEMP\instalar.ps1"
+```
+
+No pongas comillas alrededor de la URL del `irm ... | iex`: si se cierran después de `iex`, da error 404.
 
 ## Qué hace el script
 
